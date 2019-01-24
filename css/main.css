@@ -9,7 +9,7 @@ body {
   font-family: "Open sans", sans-serif; }
 
 .page-header {
-  height: 108px;
+  height: 50px;
   border-bottom: 1px solid #ddd; }
   .page-header .header-logo {
     margin: 0;
@@ -39,7 +39,7 @@ body {
 
 nav.navbar {
   position: absolute;
-  top: 108px;
+  top: 50px;
   left: 0;
   right: 0;
   background-color: white;
@@ -52,15 +52,16 @@ nav.navbar {
       margin: 0;
       margin-left: 15px; }
     nav.navbar ul li a {
-      font-size: 16px;
+      font-weight: 500;
+      font-size: 15px;
       font-family: 'Raleway', sans-serif;
-      font-weight: 400;
       color: #2F2F2F;
       letter-spacing: 1px;
       padding: 15px;
       -webkit-transition: all 0.3s ease 0s;
       transition: all 0.3s ease 0s;
-      outline: none; }
+      outline: none;
+      text-transform: uppercase; }
       nav.navbar ul li a:hover {
         color: #E8AE00; }
       nav.navbar ul li a.nav-link-separate {
@@ -87,9 +88,13 @@ nav.navbar {
       color: white; }
       nav.navbar.sticky .navbar-collapse ul li a.nav-link:hover {
         color: #E8AE00; }
+    nav.navbar.sticky .navbar-toggler .toggle .bar {
+      background: white; }
+    nav.navbar.sticky .navbar-toggler .toggle.clicked .bar:before, nav.navbar.sticky .navbar-toggler .toggle.clicked .bar:after {
+      background: white; }
   nav.navbar .navbar-toggler .toggle {
-    width: 46px;
-    height: 46px;
+    width: 30px;
+    height: 30px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -102,7 +107,7 @@ nav.navbar {
     z-index: 10; }
     nav.navbar .navbar-toggler .toggle .bar {
       position: relative;
-      width: 28px;
+      width: 18px;
       height: 2px;
       background: #474749; }
       nav.navbar .navbar-toggler .toggle .bar:before, nav.navbar .navbar-toggler .toggle .bar:after {
@@ -138,16 +143,21 @@ nav.navbar {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end; }
-    nav.navbar .navbar-collapse.collapsing ul li, nav.navbar .navbar-collapse.show ul li {
-      margin: 0;
-      text-align: center; }
-      nav.navbar .navbar-collapse.collapsing ul li a, nav.navbar .navbar-collapse.show ul li a {
-        text-transform: uppercase;
-        font-size: 22px; }
+    nav.navbar .navbar-collapse.collapsing ul, nav.navbar .navbar-collapse.show ul {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      nav.navbar .navbar-collapse.collapsing ul li, nav.navbar .navbar-collapse.show ul li {
+        margin: 0;
+        text-align: center;
+        line-height: 16px; }
+        nav.navbar .navbar-collapse.collapsing ul li a, nav.navbar .navbar-collapse.show ul li a {
+          text-transform: uppercase;
+          font-size: 16px; }
 
 section.hero-section {
-  padding: 11% 0 0;
-  height: auto;
+  height: 100vh;
   background-image: url("../img/hands.jpg");
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -294,7 +304,12 @@ section.help-section {
     color: #787878;
     font-size: 20px;
     margin-bottom: 30px; }
-  section.help-section .help-to {
+  section.help-section .help-to .help-to-box {
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 20px 15px;
+    height: 125px;
+    border-radius: 4px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -306,16 +321,38 @@ section.help-section {
         -ms-flex-pack: start;
             justify-content: start;
     -ms-flex-item-align: start;
-        align-self: start; }
-    section.help-section .help-to i {
-      padding-top: 5px;
-      margin-right: 14px;
-      font-size: 24px;
-      color: #1C9391; }
-    section.help-section .help-to p {
-      font-size: 16px;
-      line-height: 1.3;
-      max-width: 280px; }
+        align-self: start;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+    section.help-section .help-to .help-to-box:hover {
+      -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  section.help-section .help-to i {
+    margin-right: 14px;
+    font-size: 22px;
+    color: #25BFBC;
+    border: 1px solid #25BFBC;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  section.help-section .help-to p {
+    font-size: 16px;
+    line-height: 1.4;
+    max-width: 280px;
+    margin: 0; }
 
 section.contact-us-section {
   background-image: url("../img/footer_bg.jpg");
@@ -386,7 +423,7 @@ section.contact-us-section {
     font-weight: 700;
     font-size: 14px;
     width: auto;
-    padding: 15px 25px;
+    padding: 10px 25px;
     background-color: #e8ae00;
     border: medium none;
     border-radius: 3px;
@@ -442,6 +479,69 @@ section.contact-us-section {
     section.contact-us-section .footer-donate-action:hover {
       opacity: 0.7; }
 
-.rabbinic-endorsement-container {
+.letter-page .rabbinic-endorsement-container {
   padding-top: 100px;
   font-family: "Raleway",sans-serif; }
+
+@media (max-width: 575px) {
+  section.hero-section {
+    padding-top: 40px;
+    background-position: top 40%;
+    background-repeat: no-repeat;
+    background-attachment: initial;
+    background-size: cover; }
+    section.hero-section .hero-content {
+      -webkit-box-pack: start !important;
+          -ms-flex-pack: start !important;
+              justify-content: start !important;
+      -webkit-box-align: center !important;
+          -ms-flex-align: center !important;
+              align-items: center !important;
+      height: 100%;
+      min-height: 100%; }
+      section.hero-section .hero-content h1 {
+        text-align: center !important;
+        font-size: 34px;
+        margin-bottom: 24px;
+        margin-top: 30px !important; }
+      section.hero-section .hero-content h2 {
+        text-align: center !important;
+        font-size: 19px;
+        line-height: 1.3;
+        margin-bottom: 24px; }
+      section.hero-section .hero-content .hero-action .btn-primary {
+        padding: 14px 12px;
+        margin-top: 20px; }
+  .letter-page .rabbinic-endorsement-container {
+    padding-top: 60px; }
+    .letter-page .rabbinic-endorsement-container h1 {
+      font-size: 26px; } }
+
+@media (max-width: 767px) {
+  section.help-section .help-to-box {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+    text-align: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: auto !important;
+    max-height: initial; }
+    section.help-section .help-to-box i {
+      margin: 0;
+      font-size: 16px;
+      margin-bottom: 15px; }
+    section.help-section .help-to-box p {
+      font-size: 15px !important;
+      width: 100%;
+      max-width: initial; } }
+
+@media (min-width: 768px) and (max-width: 992px) {
+  section.help-section .help-to .help-to-box {
+    height: 150px;
+    padding: 15px; } }
