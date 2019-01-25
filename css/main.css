@@ -156,6 +156,15 @@ nav.navbar {
           text-transform: uppercase;
           font-size: 16px; }
 
+.donate-nav-link {
+  border: 2px solid #e8ae00;
+  padding: 4px 12px !important;
+  border-radius: 24px;
+  font-weight: 600 !important;
+  margin-left: 12px; }
+  .donate-nav-link:hover, .donate-nav-link:focus {
+    border-color: #E8AE00 !important; }
+
 section.hero-section {
   height: 100vh;
   background-image: url("../img/hands.jpg");
@@ -476,12 +485,16 @@ section.contact-us-section {
     display: block;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease; }
-    section.contact-us-section .footer-donate-action:hover {
-      opacity: 0.7; }
+    section.contact-us-section .footer-donate-action img {
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+    section.contact-us-section .footer-donate-action:hover img {
+      -webkit-box-shadow: 0px 0px 4px 1px #f2e1f2;
+              box-shadow: 0px 0px 4px 1px #f2e1f2; }
 
 .letter-page .rabbinic-endorsement-container {
   padding-top: 100px;
-  font-family: "Raleway",sans-serif; }
+  font-family: "Raleway", sans-serif; }
 
 @media (max-width: 575px) {
   section.hero-section {
