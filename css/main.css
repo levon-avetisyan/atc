@@ -8,6 +8,9 @@ body {
   min-height: 100%;
   font-family: "Open sans", sans-serif; }
 
+.rabbinic-endorsement-container {
+  padding-top: 80px; }
+
 .page-header {
   height: 50px;
   border-bottom: 1px solid #ddd; }
@@ -528,7 +531,7 @@ section.contact-us-section {
   .letter-page .rabbinic-endorsement-container {
     padding-top: 60px; }
     .letter-page .rabbinic-endorsement-container h1 {
-      font-size: 26px; } }
+      font-size: 24px; } }
 
 @media (max-width: 767px) {
   section.help-section .help-to-box {
